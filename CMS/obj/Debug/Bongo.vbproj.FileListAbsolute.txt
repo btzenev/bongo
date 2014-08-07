@@ -1,0 +1,8 @@
+D:\WIP\CMS\4.0.5\CMS\bin\Bongo.dll
+D:\WIP\CMS\4.0.5\CMS\bin\Bongo.pdb
+D:\WIP\CMS\4.0.5\CMS\obj\Debug\Resources.resources
+D:\WIP\CMS\4.0.5\CMS\obj\Debug\Bongo.vbproj.GenerateResource.Cache
+D:\WIP\CMS\4.0.5\CMS\obj\Debug\Bongo.dll
+D:\WIP\CMS\4.0.5\CMS\obj\Debug\Bongo.pdb
+D:\GitHub Projects\assent-compliance-suite\assent-compliance-suite\Bin\Bongo.dll
+D:\GitHub Projects\assent-compliance-suite\assent-compliance-suite\Bin\Bongo.pdb

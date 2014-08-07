@@ -1,0 +1,60 @@
+4.0.0
+========================================================
+
+- Base for .net 4.0 sites.
+- Extentionless URL's.
+- New "App_Plugins" Folder.
+
+4.0.1
+========================================================
+
+  [2012-06-20]
+- Fixed/Added reorder of pages on save.
+- Fixed non "visible" pages showing up in the subtree.
+- Added new edit page functionality with "Meta Settings" section
+- Renamed/Edited "Header" on Edit page to "Meta Description".
+- Added "Meta Title" on Edit page.
+- Added "Meta Keywords" on Edit page.
+  [2012-07-04] 
+- Fixed load of plugins, custom plugins have priority.
+
+DATABASE:
+- [cms_pages] : 'header' renamed 'meta_description'
+- [cms_pages] : added 'meta_title'
+- [cms_pages] : added 'meta_keywords'
+
+4.0.2
+========================================================
+
+  [2012-08-02] 
+- Fixed permissions on plugins (ability to hide for all bar admin).
+  [2012-08-03] 
+- New site password addition (ability to set custom password for global user).
+- New site password backwards compatible with 4.0.1.
+  [2012-08-08] 
+- Edit page: Custom integer/byte drop down fix.
+  [2012-08-13]
+- Page settings bug load cache of page. Forced reload upon load.
+  [2012-08-20]
+- Fixed issue with select.aspx. JSON error with loading file list.
+- Fixed encrypt/decrypt bug with older code. Will take site.encryption over APPId.
+  [2012-09-13]
+- Fix resizing of editor when editing a plugin [maximize/minimize].
+
+4.0.3
+========================================================
+  [2012-09-11]
+- Added <span> to client_subtree a tag for future help with images.
+  [2012-09-14]
+- Fix of user role bug, not copying permissions, database commit issue.
+- Fix of updating permissions [cms_pagemodules] to [cms_modules]
+  [2012-09-24]
+- Fix of administrator overriding "landing" and "app" values with defaulted 0 in CMS code.
+  (Temp Solution: update of /CMS/plugins/admin_site/page.htm with <!global!> values.)
+  
+4.0.5
+========================================================
+  [2013-02-04]
+- /CMS/plugins/admin_site/site.js changes to add/delete modules without reloading.
+  [2013-02-05]
+- Change: CMS.Plugins.Admin.Site.vb in CMS.dll - Page title and name default to "Untitled " & #. Will save with, if none specified.
