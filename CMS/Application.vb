@@ -177,56 +177,56 @@ Public Class Application
 
   Protected Sub Application_BeginRequest(ByVal sender As Object, ByVal e As EventArgs)
     Dim str_host As String = Url.Host.ToLower
-    'Dim str_url As String = Url.LocalPath.ToLower
-    'Dim str_query As StringB = Url.Query.TrimStart("?")
-    ' Throw New System.Exception(Join(mobj_domains.ToArray, ","))
-    'check license for domain
+        Dim str_url As String = Url.LocalPath.ToLower
+        Dim str_query As String = Url.Query.TrimStart("?")
+        Throw New System.Exception(Join(mobj_domains.ToArray, ","))
+        'check license for domain
         'If Not mobj_domains.Contains(str_host) Then Throw New System.Exception("APPLICATION: Not Licensed.")
-    'If Global.Application.Status = 1 Then Response.Redirect("/default.aspx", True)
+        If Global.Application.Status = 1 Then Response.Redirect("/default.aspx", True)
 
 
-    'If Not File.Exists(MapPath(str_url)) And Not Pages.List Is Nothing Then
+        If Not File.Exists(MapPath(str_url)) And Not Pages.List Is Nothing Then
 
-    '  Dim str_ext As String = Path.GetExtension(str_url).TrimStart("."c).ToLower
-    '  If str_ext.Length = 0 And Not str_url.EndsWith("/") Then
-    '    str_url &= "/" 'default.aspx"
-    '    If str_query.Length > 0 Then str_url &= "?" & str_query
-    '    Response.Redirect(str_url, True)
-    '  Else
+            Dim str_ext As String = Path.GetExtension(str_url).TrimStart("."c).ToLower
+            If str_ext.Length = 0 And Not str_url.EndsWith("/") Then
+                str_url &= "/" 'default.aspx"
+                If str_query.Length > 0 Then str_url &= "?" & str_query
+                Response.Redirect(str_url, True)
+            Else
 
-    '    If str_url = "/" Or str_url.StartsWith("/default.aspx") Then
-    '      str_url = "/default.aspx?pageid=" & Config("page.landing")
-    '      'ElseIf str_url.StartsWith("/cms/image/") Then
-    '      '  str_url = str_url.Substring(11)
-    '      '  Dim int_start As Integer = str_url.IndexOf("/")
-    '      '  Dim str_dim As String = str_url.Substring(0, int_start)
-    '      '  str_url = "/cms/image.aspx?dim=" & str_dim & "&file=" & str_url.Substring(int_start)
-    '    ElseIf str_url.StartsWith("/cms/") Then
-    '      str_url = "/cms/default.aspx"
-    '    Else
-    '      If str_url.Contains("/default.aspx") And str_url.Length > 13 Then
-    '        str_url = str_url.Replace("/default.aspx", "")
-    '      ElseIf str_url.EndsWith("/") And str_url.Length > 1 Then
-    '        str_url = str_url.Substring(0, str_url.Length - 1)
-    '      End If
+                If str_url = "/" Or str_url.StartsWith("/default.aspx") Then
+                    str_url = "/default.aspx?pageid=" & Config("page.landing")
+                    'ElseIf str_url.StartsWith("/cms/image/") Then
+                    '  str_url = str_url.Substring(11)
+                    '  Dim int_start As Integer = str_url.IndexOf("/")
+                    '  Dim str_dim As String = str_url.Substring(0, int_start)
+                    '  str_url = "/cms/image.aspx?dim=" & str_dim & "&file=" & str_url.Substring(int_start)
+                ElseIf str_url.StartsWith("/cms/") Then
+                    str_url = "/cms/default.aspx"
+                Else
+                    If str_url.Contains("/default.aspx") And str_url.Length > 13 Then
+                        str_url = str_url.Replace("/default.aspx", "")
+                    ElseIf str_url.EndsWith("/") And str_url.Length > 1 Then
+                        str_url = str_url.Substring(0, str_url.Length - 1)
+                    End If
 
-    '      Dim obj_page As Page = Pages.Get(str_url)
-    '      If obj_page IsNot Nothing Then
-    '        If Not Security.IsAdmin() And NotEmpty(obj_page.Redirect) Then
-    '          Response.Status = "301 Moved Permanently"
-    '          Response.AddHeader("Location", obj_page.Redirect)
-    '          Response.End()
-    '          Return
-    '        End If
-    '        str_url = "/default.aspx?pageid=" & obj_page.ID
-    '      Else
-    '        Throw New HttpException(404, "Not Found")
-    '      End If
-    '    End If
-    '    If NotEmpty(str_query) Then str_url &= IIf(str_url.IndexOf("?") > 0, "&", "?") & str_query
-    '    HttpContext.Current.RewritePath(str_url)
-    '  End If
-    'End If
+                    Dim obj_page As Page = Pages.Get(str_url)
+                    If obj_page IsNot Nothing Then
+                        If Not Security.IsAdmin() And NotEmpty(obj_page.Redirect) Then
+                            Response.Status = "301 Moved Permanently"
+                            Response.AddHeader("Location", obj_page.Redirect)
+                            Response.End()
+                            Return
+                        End If
+                        str_url = "/default.aspx?pageid=" & obj_page.ID
+                    Else
+                        Throw New HttpException(404, "Not Found")
+                    End If
+                End If
+                If NotEmpty(str_query) Then str_url &= IIf(str_url.IndexOf("?") > 0, "&", "?") & str_query
+                HttpContext.Current.RewritePath(str_url)
+            End If
+        End If
   End Sub
 
   Protected Sub Application_AuthenticateRequest(ByVal sender As Object, ByVal e As EventArgs)

@@ -6,3 +6,5 @@ D:\WIP\CMS\4.0.5\CMS\obj\Debug\Bongo.dll
 D:\WIP\CMS\4.0.5\CMS\obj\Debug\Bongo.pdb
 D:\GitHub Projects\assent-compliance-suite\assent-compliance-suite\Bin\Bongo.dll
 D:\GitHub Projects\assent-compliance-suite\assent-compliance-suite\Bin\Bongo.pdb
+D:\assen\Demo\Bin\Bongo.dll
+D:\assen\Demo\Bin\Bongo.pdb

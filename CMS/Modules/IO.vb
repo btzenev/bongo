@@ -87,7 +87,7 @@ Public Module _IO
     Public Sub Log(ByVal vstr_msg As String, ByVal vstr_details As String)
         Try
             If ToBoolean(Config("cms.log"), True) Then
-                Dim str_file As String = MapPath(AppPath, "cms.log")
+                Dim str_file As String = MapPath(AppPath, "files/logs/cms.log")
                 Using obj_stream As New FileStream(str_file, FileMode.Append, FileAccess.Write)
                     'obj_stream.Position = 0
                     Using obj_writer As New StreamWriter(obj_stream)

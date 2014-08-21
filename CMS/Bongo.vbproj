@@ -32,7 +32,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>..\..\..\..\GitHub Projects\assent-compliance-suite\assent-compliance-suite\Bin\</OutputPath>
+    <OutputPath>..\..\..\..\assen\Demo\Bin\</OutputPath>
     <DocumentationFile>
     </DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107,42353,42354,42355</NoWarn>

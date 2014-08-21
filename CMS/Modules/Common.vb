@@ -390,23 +390,23 @@ Public Module _Common
     End If
   End Function
 
-  Public Function BreadCrumbs(ByVal int_page As Integer) As String
-    Dim obj_stack As New System.Collections.Stack
-    Dim obj_page As Page
-    Dim b_current As Boolean = True
-    While int_page > 0
-      obj_page = Pages.Get(int_page)
-      If b_current Then
-        b_current = False
-        obj_stack.Push("<span class=""crumb last"">" & obj_page.Title & "</span>")
-      Else
-        obj_stack.Push("<a class=""crumb"" href=""" & obj_page.Url & """>" & obj_page.Title & "</a>")
-      End If
-      int_page = obj_page.Parent
-    End While
-    obj_stack.Push("<a class=""crumb first"" href=""/"">Home</a>")
-    Return Join(obj_stack.ToArray, ":")
-  End Function
+    Public Function BreadCrumbs(ByVal int_page As Integer) As String
+        Dim obj_stack As New System.Collections.Stack
+        Dim obj_page As Page
+        Dim b_current As Boolean = True
+        While int_page > 0
+            obj_page = Pages.Get(int_page)
+            If b_current Then
+                b_current = False
+                obj_stack.Push("<span class=""crumb last"">" & obj_page.Title & "</span>")
+            Else
+                obj_stack.Push("<a class=""crumb"" href=""" & obj_page.Url & """>" & obj_page.Title & "</a>")
+            End If
+            int_page = obj_page.Parent
+        End While
+        obj_stack.Push("<a class=""crumb first"" href=""/"">Home</a>")
+        Return Join(obj_stack.ToArray, " > ")
+    End Function
 
   Public Sub SetCache(ByVal vobj_cache As System.Web.HttpCacheability)
     If vobj_cache = System.Web.HttpCacheability.NoCache Then

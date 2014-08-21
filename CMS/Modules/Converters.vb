@@ -51,8 +51,10 @@ Public Module _Converters
         Return DirectCast(vobj_value, Integer)
       Else
         Dim int_value As Integer
-        If Integer.TryParse(vobj_value, int_value) Then Return int_value
-      End If
+                int_value = Integer.Parse(vobj_value)
+                Return int_value
+
+            End If
     End If
     Return vint_default
   End Function
